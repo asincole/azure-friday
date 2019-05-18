@@ -10,6 +10,7 @@ document.body.onload = fetchData(videosAPIUrl);
 // get user's browser locale
 let userLocale = navigator.language ? navigator.language : 'en-US';
 
+
 // instantiate lazy load library
 var lazyLoadInstance = new LazyLoad({
     elements_selector: ".lazy"
@@ -24,6 +25,7 @@ function fetchData(url) {
             hideLoadingIndicator();
         })
         .catch((err) => {
+            console.log(err);            
             hideLoadingIndicator();
             let errorMessage = document.getElementById('errorMessage');
             errorMessage.style.display = "block";
@@ -81,6 +83,7 @@ function renderDataInView(data) {
     initListJS();
     // lazyLoad instance has to be updated each time the DOM is changed
     updateLazyLoadInstance();
+
 }
 // function to update instance 
 function updateLazyLoadInstance() {

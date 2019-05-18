@@ -36,13 +36,15 @@
                 })
                 .then((registration)=>{
                     var serviceWorker;
+
                     if (registration.active) {
                         serviceWorker = registration.active;
                   
                             serviceWorker.addEventListener('statechange', function (e) {
                             // logState(e.target.state);
                             let confirmRefresh = confirm("New version of this site is available, reload page?");
-                            if(confirmRefresh) {
+
+                              if(confirmRefresh) {
                                 window.location.reload();
                             }
                         });

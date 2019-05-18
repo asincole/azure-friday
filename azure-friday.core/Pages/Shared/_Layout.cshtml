@@ -47,7 +47,7 @@
                         // logState(serviceWorker.state);
                         serviceWorker.addEventListener('statechange', function (e) {
                             // logState(e.target.state);
-                            let confirmRefresh = confirm("Press a button!");
+                            let confirmRefresh = confirm("New version of this site is available, reload page?");
                             if(confirmRefresh) {
                                 window.location.reload();
                             }
